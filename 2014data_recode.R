@@ -1,5 +1,7 @@
+setwd("this is where you put the data file")
 data<- read.csv("2014data.csv", stringsAsFactors=FALSE)
 library(reshape)
+library(car)
 names(data) <- c("id", "time","ip", "voting", "human_rights", 
                    "information", "multi_party", "freedom_of_speech",
                    "college_exam", "religion", "military_training",
@@ -31,5 +33,6 @@ View(data)
 
 ## Convert the whole data frame into a numeric matrix, if needed ##
 data[c(4:53, 55:58)] <- sapply(data[c(4:53, 55:58)],as.numeric)
+data$age<- 2015-data$birthyear
 View(data)
 
