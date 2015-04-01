@@ -29,3 +29,7 @@ data$education<- recode(data$education, "'初中及以下'=1;'高中'=2;
                         '大学'=3;'研究生及以上'=4")
 View(data)
 
+## Convert the whole data frame into a numeric matrix, if needed ##
+data[c(4:53, 55:58)] <- sapply(data[c(4:53, 55:58)],as.numeric)
+View(data)
+
